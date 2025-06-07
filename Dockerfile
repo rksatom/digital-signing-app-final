@@ -1,7 +1,13 @@
 FROM python:3.11
 
+# Install required system libraries
 RUN apt-get update && apt-get install -y \
-    gcc libssl-dev libffi-dev libp11-kit-dev pkg-config \
+    libssl-dev \
+    libffi-dev \
+    libp11-kit-dev \
+    gcc \
+    pkg-config \
+    openssl \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
